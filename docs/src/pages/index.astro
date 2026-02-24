@@ -2,17 +2,88 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-// Sprint 002: Load collection to enforce schema validation on build.
-// Projects are not rendered yet — that is Sprint 003.
 const projects = await getCollection('projects');
 ---
 
 <BaseLayout>
   <main>
     <h1>Receipt-First Portfolio</h1>
-    <p>Global styling foundation is in place for upcoming sprints.</p>
-    <h2>Sprint 001 Placeholder</h2>
-    <p>This page exists only to verify the style system loads correctly.</p>
-    <!-- {projects.length} projects loaded (not rendered until Sprint 003) -->
+    <p class="value-prop">Every project here ships with a measurable result — no vague outcomes, only hard numbers.</p>
+
+    <div class="grid">
+      {projects.map((project) => (
+        <article class="card">
+          <img
+            src={project.data.coverImage}
+            alt={project.data.title}
+            class="card-image"
+          />
+          <div class="card-body">
+            <p class="card-title">{project.data.title}</p>
+            <p class="card-tagline">{project.data.tagline}</p>
+            <span class="receipt-badge">{project.data.receipt}</span>
+          </div>
+        </article>
+      ))}
+    </div>
   </main>
 </BaseLayout>
+
+<style>
+  .value-prop {
+    max-width: 640px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+  }
+
+  @media (min-width: 768px) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .card {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--space-2);
+    background: var(--color-bg);
+    overflow: hidden;
+  }
+
+  .card-image {
+    width: 100%;
+    border-radius: var(--radius);
+    display: block;
+  }
+
+  .card-body {
+    padding-top: var(--space-2);
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--space-1);
+  }
+
+  .card-tagline {
+    font-size: 1rem;
+    margin-bottom: var(--space-2);
+  }
+
+  .receipt-badge {
+    display: inline-block;
+    background: #ffffff;
+    color: #1a1a1a;
+    font-weight: bold;
+    border: 1px solid var(--color-border);
+    border-radius: var(--space-1);
+    padding: var(--space-1) var(--space-2);
+    font-size: 0.875rem;
+  }
+</style>

@@ -1,5 +1,5 @@
 # Sprint 003 — Home Page (index.astro)
-**Status:** planning
+**Status:** completed
 
 ## Goal
 Build the home page: an H1 hero with a value proposition, a responsive 2-column project grid, and a receipt badge on each card.
@@ -17,12 +17,12 @@ Build the home page: an H1 hero with a value proposition, a responsive 2-column 
 - `src/styles/global.css` (grid utility if needed — minimal additions only)
 
 ## Acceptance Criteria
-- [ ] Page has exactly one `<h1>` with visible text
-- [ ] A one-sentence paragraph below the H1 acts as value proposition
-- [ ] `getCollection('projects')` is called and exactly 3 cards are rendered
-- [ ] CSS Grid switches from 1 column (`< 768px`) to 2 columns (`≥ 768px`) via a media query
-- [ ] Each card displays a distinct receipt badge: bold text, `background: #FFFFFF`, `color: #1A1A1A`
-- [ ] `npm run build` exits 0; `npm run preview` shows the grid
+- [x] Page has exactly one `<h1>` with visible text
+- [x] A one-sentence paragraph below the H1 acts as value proposition
+- [x] `getCollection('projects')` is called and exactly 3 cards are rendered
+- [x] CSS Grid switches from 1 column (`< 768px`) to 2 columns (`≥ 768px`) via a media query
+- [x] Each card displays a distinct receipt badge: bold text, `background: #FFFFFF`, `color: #1A1A1A`
+- [x] `npm run build` exits 0; `npm run preview` shows the grid
 
 ## Verification Steps
 1. `npm run dev` — count cards on screen (must be 3).
