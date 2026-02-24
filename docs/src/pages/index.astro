@@ -12,18 +12,20 @@ const projects = await getCollection('projects');
 
     <div class="grid">
       {projects.map((project) => (
-        <article class="card">
-          <img
-            src={project.data.coverImage}
-            alt={project.data.title}
-            class="card-image"
-          />
-          <div class="card-body">
-            <p class="card-title">{project.data.title}</p>
-            <p class="card-tagline">{project.data.tagline}</p>
-            <span class="receipt-badge">{project.data.receipt}</span>
-          </div>
-        </article>
+        <a href={`/projects/${project.slug}`} class="card-link">
+          <article class="card">
+            <img
+              src={project.data.coverImage}
+              alt={project.data.title}
+              class="card-image"
+            />
+            <div class="card-body">
+              <p class="card-title">{project.data.title}</p>
+              <p class="card-tagline">{project.data.tagline}</p>
+              <span class="receipt-badge">{project.data.receipt}</span>
+            </div>
+          </article>
+        </a>
       ))}
     </div>
   </main>
@@ -45,6 +47,16 @@ const projects = await getCollection('projects');
     .grid {
       grid-template-columns: 1fr 1fr;
     }
+  }
+
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .card-link:hover {
+    opacity: 0.9;
   }
 
   .card {

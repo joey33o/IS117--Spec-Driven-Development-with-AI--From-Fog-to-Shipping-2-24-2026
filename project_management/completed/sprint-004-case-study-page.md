@@ -1,5 +1,5 @@
 # Sprint 004 — Case Study Page ([slug].astro)
-**Status:** planning
+**Status:** completed
 
 ## Goal
 Build the dynamic case study page with a readable 800px content width, a primary CTA button linking to the git repo, correct H2 top margin, and 12px border-radius on images.
@@ -17,12 +17,12 @@ Build the dynamic case study page with a readable 800px content width, a primary
 - `src/pages/index.astro` (add card links if missing)
 
 ## Acceptance Criteria
-- [ ] Visiting `/projects/project-one` renders the correct project without a 404
-- [ ] Content wrapper has `max-width: 800px` and is centered
-- [ ] A visible CTA button/link points to the `gitLink` URL
-- [ ] All `<h2>` elements on the page have `margin-top: 80px` (exactly `var(--space-10)`)
-- [ ] All `<img>` elements inside the content have `border-radius: 12px`
-- [ ] `npm run build` exits 0 and generates a static page for each of the 3 projects
+- [x] Visiting `/projects/project-one` renders the correct project without a 404
+- [x] Content wrapper has `max-width: 800px` and is centered
+- [x] A visible CTA button/link points to the `gitLink` URL
+- [x] All `<h2>` elements on the page have `margin-top: 80px` (exactly `var(--space-10)`)
+- [x] All `<img>` elements inside the content have `border-radius: 12px`
+- [x] `npm run build` exits 0 and generates a static page for each of the 3 projects
 
 ## Verification Steps
 1. `npm run build` — confirm 3 HTML files under `dist/projects/`.

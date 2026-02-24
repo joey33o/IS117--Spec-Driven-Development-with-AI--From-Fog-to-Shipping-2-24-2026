@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { Content } = await project.render();
+---
+
+<BaseLayout>
+  <div class="content-wrapper">
+    <h1>{project.data.title}</h1>
+    <p class="tagline">{project.data.tagline}</p>
+    <a href={project.data.gitLink} class="cta-button" target="_blank" rel="noopener noreferrer">
+      View on GitHub
+    </a>
+    <Content />
+  </div>
+</BaseLayout>
+
+<style>
+  .content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .tagline {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--color-text);
+    color: var(--color-bg);
+    padding: var(--space-1) var(--space-4);
+    border: 2px solid var(--color-text);
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+  }
+
+  .cta-button:hover {
+    opacity: 0.7;
+  }
+
+  .content-wrapper :global(h2) {
+    margin-top: 80px;
+  }
+
+  .content-wrapper :global(img) {
+    border-radius: 12px;
+  }
+</style>
