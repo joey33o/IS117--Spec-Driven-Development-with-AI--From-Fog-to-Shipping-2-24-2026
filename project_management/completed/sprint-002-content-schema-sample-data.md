@@ -1,5 +1,5 @@
 # Sprint 002 — Content Schema & Sample Project Data
-**Status:** planning
+**Status:** completed
 
 ## Goal
 Define the Zod content collection schema so a missing `receipt` field causes a build failure, then add exactly 3 sample project markdown files that satisfy the schema.
@@ -18,11 +18,11 @@ Define the Zod content collection schema so a missing `receipt` field causes a b
 - `src/content/projects/project-three.md`
 
 ## Acceptance Criteria
-- [ ] `config.ts` exports a `collections` object with a `projects` key
-- [ ] Schema requires: `title` (string), `tagline` (string), `receipt` (string), `category` (enum: Deep Dive | Real World | Specialist), `coverImage` (string), `gitLink` (URL string)
-- [ ] All 3 markdown files have valid frontmatter that passes schema validation
-- [ ] `npm run build` fails with a Zod error when `receipt` is omitted from any project file (verified manually then reverted)
-- [ ] `npm run build` succeeds with all 3 files intact
+- [x] `config.ts` exports a `collections` object with a `projects` key
+- [x] Schema requires: `title` (string), `tagline` (string), `receipt` (string), `category` (enum: Deep Dive | Real World | Specialist), `coverImage` (string), `gitLink` (URL string)
+- [x] All 3 markdown files have valid frontmatter that passes schema validation
+- [x] `npm run build` fails with a Zod error when `receipt` is omitted from any project file (verified manually then reverted)
+- [x] `npm run build` succeeds with all 3 files intact
 
 ## Verification Steps
 1. Run `npm run build` — exits 0.

@@ -1,5 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+// Sprint 002: Load collection to enforce schema validation on build.
+// Projects are not rendered yet — that is Sprint 003.
+const projects = await getCollection('projects');
 ---
 
 <BaseLayout>
@@ -8,5 +13,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <p>Global styling foundation is in place for upcoming sprints.</p>
     <h2>Sprint 001 Placeholder</h2>
     <p>This page exists only to verify the style system loads correctly.</p>
+    <!-- {projects.length} projects loaded (not rendered until Sprint 003) -->
   </main>
 </BaseLayout>
