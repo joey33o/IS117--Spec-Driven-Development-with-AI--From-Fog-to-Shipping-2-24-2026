@@ -47,6 +47,14 @@ const projects = await getCollection('projects');
     .grid {
       grid-template-columns: 1fr 1fr;
     }
+
+    /* Fix 3: center lone card when 3 items produce an orphaned last row */
+    .grid > .card-link:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+      max-width: calc(50% - var(--space-2));
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   .card-link {
@@ -55,8 +63,9 @@ const projects = await getCollection('projects');
     display: block;
   }
 
+  /* Fix 4: align hover opacity with spec convention (0.7) */
   .card-link:hover {
-    opacity: 0.9;
+    opacity: 0.7;
   }
 
   .card {
@@ -67,8 +76,12 @@ const projects = await getCollection('projects');
     overflow: hidden;
   }
 
+  /* Fix 2: reserve consistent image area; graceful fallback when src is missing */
   .card-image {
     width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    background: var(--color-border);
     border-radius: var(--radius);
     display: block;
   }
@@ -88,14 +101,16 @@ const projects = await getCollection('projects');
     margin-bottom: var(--space-2);
   }
 
+  /* Fix 5: stronger badge border + subtle shadow so it reads as a distinct proof element */
   .receipt-badge {
     display: inline-block;
     background: #ffffff;
     color: #1a1a1a;
     font-weight: bold;
-    border: 1px solid var(--color-border);
+    border: 1px solid #cccccc;
     border-radius: var(--space-1);
     padding: var(--space-1) var(--space-2);
     font-size: 0.875rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
   }
 </style>
