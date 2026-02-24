@@ -1,5 +1,5 @@
 # Sprint 001 — Project Scaffolding & Global Styles
-**Status:** active
+**Status:** completed
 
 ## Goal
 Bootstrap the Astro 4.x project and implement `global.css` exactly per spec so every future sprint can build on a correct foundation.
@@ -20,13 +20,13 @@ Bootstrap the Astro 4.x project and implement `global.css` exactly per spec so e
 - `src/pages/index.astro` (placeholder only)
 
 ## Acceptance Criteria
-- [ ] `global.css` defines `--color-bg`, `--color-text`, `--color-border`, `--space-1/2/4/10`, `--radius`
-- [ ] `body` has `background-color: var(--color-bg)`, `font-family: 'Inter', sans-serif`, `padding: var(--space-10) 5%`, `margin: 0`
-- [ ] `h1` renders at `4rem`, weight `800`, `letter-spacing: -0.03em`, `margin-bottom: var(--space-4)`
-- [ ] `h2` renders at `2.25rem`, weight `700`, `margin-top: var(--space-10)`, `margin-bottom: var(--space-4)`
-- [ ] `p` renders at `1.125rem`, `margin-bottom: var(--space-2)`
-- [ ] `a` has `color: inherit`, `text-decoration: underline`, `text-underline-offset: 4px`; hover is `opacity: 0.7`
-- [ ] `astro dev` starts without errors and the placeholder page renders on `#F9F9F9` background with Inter loaded
+- [x] `global.css` defines `--color-bg`, `--color-text`, `--color-border`, `--space-1/2/4/10`, `--radius`
+- [x] `body` has `background-color: var(--color-bg)`, `font-family: 'Inter', sans-serif`, `padding: var(--space-10) 5%`, `margin: 0`
+- [x] `h1` renders at `4rem`, weight `800`, `letter-spacing: -0.03em`, `margin-bottom: var(--space-4)`
+- [x] `h2` renders at `2.25rem`, weight `700`, `margin-top: var(--space-10)`, `margin-bottom: var(--space-4)`
+- [x] `p` renders at `1.125rem`, `margin-bottom: var(--space-2)`
+- [x] `a` has `color: inherit`, `text-decoration: underline`, `text-underline-offset: 4px`; hover is `opacity: 0.7`
+- [x] `astro dev` starts without errors and the placeholder page renders on `#F9F9F9` background with Inter loaded
 
 ## Verification Steps
 1. Run `npm run dev` — browser shows placeholder page with correct background color (#F9F9F9).

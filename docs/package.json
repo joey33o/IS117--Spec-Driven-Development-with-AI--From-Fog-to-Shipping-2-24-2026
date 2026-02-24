@@ -1,0 +1,16 @@
+{
+  "name": "receipt-first-portfolio",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.1.0",
+    "astro": "^4.16.18"
+  }
+}

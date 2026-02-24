@@ -1,0 +1,52 @@
+@import "@fontsource/inter";
+
+:root {
+  --color-bg: #f9f9f9;
+  --color-text: #1a1a1a;
+  --color-border: #eeeeee;
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-4: 32px;
+  --space-10: 80px;
+
+  --radius: 12px;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: var(--space-10) 5%;
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-4);
+}
+
+h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-4);
+}
+
+p {
+  font-size: 1.125rem;
+  margin-bottom: var(--space-2);
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  opacity: 0.7;
+}

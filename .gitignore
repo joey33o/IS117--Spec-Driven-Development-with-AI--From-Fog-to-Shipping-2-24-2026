@@ -1,0 +1,5 @@
+# Temp Claude working directory files
+tmpclaude-archive/
+tmpclaude-*
+.claude
+/docs/node_modules/
