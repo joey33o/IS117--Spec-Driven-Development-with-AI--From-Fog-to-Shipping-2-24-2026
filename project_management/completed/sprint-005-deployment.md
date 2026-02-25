@@ -1,5 +1,5 @@
 # Sprint 005 — Deployment Configuration
-**Status:** planning
+**Status:** completed
 
 ## Goal
 Wire up `astro.config.mjs` with the correct `site` and `base` values, and create a GitHub Actions workflow that builds and deploys to GitHub Pages on every push to `main`.
@@ -17,13 +17,13 @@ Wire up `astro.config.mjs` with the correct `site` and `base` values, and create
 - `.github/workflows/deploy.yml`
 
 ## Acceptance Criteria
-- [ ] `astro.config.mjs` has a `site` property set to `https://<username>.github.io`
-- [ ] `astro.config.mjs` has a `base` property matching the GitHub repository name
-- [ ] Workflow file has `on: push` with `branches: [main]`
-- [ ] Workflow uses `withastro/action` for the build
-- [ ] Workflow uses `actions/deploy-pages` (not `gh-pages` branch manually)
-- [ ] `npm run build` with `base` set produces correct asset paths (no broken `/assets/` references)
-- [ ] Workflow YAML is valid (no syntax errors)
+- [x] `astro.config.mjs` has a `site` property set to `https://<username>.github.io`
+- [x] `astro.config.mjs` has a `base` property matching the GitHub repository name
+- [x] Workflow file has `on: push` with `branches: [main]`
+- [x] Workflow uses `withastro/action` for the build
+- [x] Workflow uses `actions/deploy-pages` (not `gh-pages` branch manually)
+- [x] `npm run build` with `base` set produces correct asset paths (no broken `/assets/` references)
+- [x] Workflow YAML is valid (no syntax errors)
 
 ## Verification Steps
 1. `npm run build` — inspect `dist/index.html` to confirm asset hrefs include the base path prefix.
