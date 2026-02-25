@@ -8,7 +8,6 @@ permissions:
   contents: read
   pages: write
   id-token: write
-  administration: write
 
 concurrency:
   group: "pages"
@@ -23,11 +22,9 @@ jobs:
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
-        with:
-          enablement: true
 
       - name: Build with Astro
-        uses: withastro/action@v3
+        uses: withastro/action@v2
         with:
           path: ./docs
 
